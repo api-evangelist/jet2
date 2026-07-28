@@ -47,8 +47,20 @@ description: >-
   controlled by each airline." This record is an honest stub: apis[] is
   intentionally empty because no Jet2 API is publicly documented, and listing an
   undocumented hostname as an API would be fabrication. The evidence, including
-  every URL probed with its HTTP status, is in review.yml.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+  every URL probed with its HTTP status, is in review.yml. A second enrichment
+  pass on 28 July 2026 found the one genuinely public first-party developer
+  surface Jet2 has, and it is not an API: the Jet2 Design System, published as
+  two npm packages under the @jet2 scope (design tokens for seven brand themes,
+  and a React component library containing a single Button), sourced from Jet2's
+  private Azure DevOps organisation at jet2tfs.visualstudio.com/Jet2Digital and
+  documented at design.jet2.com behind a Supernova login. Both packages were
+  last published in April 2024. The same pass confirmed no /.well-known/
+  document on any host that answers, no security.txt, no vulnerability
+  disclosure programme, no trust centre, no public Postman collection and no
+  SDK in any package registry. Jet2's engineering voice, such as it is, comes
+  from Jet2 Travel Technologies (J2TT), its in-house development centre in Pune,
+  India, which runs a public blog with an RSS feed.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Travel
 - United Kingdom
@@ -66,6 +78,8 @@ modified: '2026-07-28'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/jet2-domain-security.yml
 - type: Website
   name: Jet2.com
   url: https://www.jet2.com/
@@ -84,8 +98,8 @@ common:
 - type: ConsumerProtection
   name: ATOL protection
   url: https://www.jet2holidays.com/atol
-- type: Documentation
-  name: Carrier information and liability notice
+- type: LegalNotice
+  name: Carrier information and liability notice (consumer legal notice, not API documentation)
   url: https://www.jet2.com/en/carrier-information-and-liability-notice
 - type: About
   name: About us
@@ -99,6 +113,33 @@ common:
 - type: Wikipedia
   name: Jet2.com
   url: https://en.wikipedia.org/wiki/Jet2.com
+- type: PrivacyPolicy
+  name: Jet2 plc privacy policy (corporate site)
+  url: https://www.jet2plc.com/privacy
+- type: About
+  name: Jet2 Travel Technologies (J2TT) — in-house development centre, Pune, India
+  url: https://jet2traveltech.com/
+- type: Blog
+  name: Jet2 Travel Technologies engineering blog
+  url: https://jet2traveltech.com/blogs
+- type: BlogRSS
+  name: Jet2 Travel Technologies blog RSS feed
+  url: https://jet2traveltech.com/blogs/feed/
+- type: DesignSystem
+  name: Jet2 Design System documentation (Supernova; login required)
+  url: https://design.jet2.com/
+- type: SourceCode
+  name: Jet2 Digital on Azure DevOps (private; no public GitHub organisation)
+  url: https://jet2tfs.visualstudio.com/Jet2Digital
+- type: Packages
+  name: Public first-party packages — two npm design-system packages, no API SDK
+  url: packages/jet2-packages.yml
+- type: Components
+  name: Jet2 Design System — tokens, themes and React components
+  url: components/jet2-components.yml
+- type: LLMsTxt
+  name: Generated llms.txt for Jet2 (not published by Jet2)
+  url: llms/jet2-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

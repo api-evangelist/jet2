@@ -1,0 +1,133 @@
+generated: '2026-07-28'
+method: probed
+source: live HTTP probes, 2026-07-28
+summary: >-
+  Jet2 publishes NO /.well-known/ discovery surface on any host that answers a
+  request. This file is a negative-result record: every path below was probed
+  and its HTTP status recorded. Zero documents returned 200, so no raw files
+  were saved and NO `WellKnown` or `SecurityTxt` pointer is wired into apis.yml
+  — emitting one for an all-miss probe matrix would misrepresent the provider.
+  Two response shapes are present and they mean different things: 404 is a live
+  host that genuinely serves nothing at that path (api.jet2.com is a bare
+  Microsoft IIS 10.0 instance; www.jet2plc.com is the corporate site), while 000
+  is no response at all — the consumer-facing jet2.com and jet2holidays.com
+  hosts sit behind Akamai bot management that drops automated clients outright,
+  so absence there is unproven rather than proven. api.jet2.com answers only
+  over HTTP/1.1; HTTP/2 requests are terminated.
+documents_found: 0
+hosts:
+- host: https://api.jet2.com
+  reachable: true
+  transport: HTTP/1.1 only
+  server: Microsoft-IIS/10.0
+  note: >-
+    Real API hostname resolving via api.lb.jet2.com. Serves the stock IIS
+    default page at / and 404 on every discovery path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/openapi.json
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /swagger
+    status: 404
+  - path: /v1/openapi.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /redoc
+    status: 404
+  - path: /graphql
+    status: 404
+- host: https://www.jet2plc.com
+  reachable: true
+  note: Jet2 plc corporate and investor-relations site; the only Jet2 HTML host that answers automated requests.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://www.jet2.com
+  reachable: false
+  note: Akamai bot management drops automated clients; absence is unproven, not proven.
+  documents:
+  - path: /.well-known/security.txt
+    status: 000
+- host: https://www.jet2holidays.com
+  reachable: false
+  note: Akamai bot management drops automated clients; absence is unproven, not proven.
+  documents:
+  - path: /.well-known/security.txt
+    status: 000
+- host: https://jet2traveltech.com
+  reachable: true
+  note: >-
+    Jet2 Travel Technologies (J2TT), Jet2's in-house technology development
+    centre in Pune, India. WordPress site; answers requests.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /robots.txt
+    status: 404
+- host: https://design.jet2.com
+  reachable: gated
+  note: >-
+    Jet2 Design System documentation hosted on Supernova
+    (CNAME -> colossal-opossum-peach.custom.supernova-docs.io). Redirects to
+    auth.supernova.io OAuth login (PKCE, docs_domain=design.jet2.com) — the
+    content is behind a login wall. Non-browser clients receive HTTP 400
+    {"error":"Not supported on older browsers."}.
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /llms.txt
+    status: 400
+  - path: /robots.txt
+    status: 400
+- host: https://api.jet2holidays.com
+  reachable: false
+  note: Resolves via api.lb.jet2holidays.com to 62.190.131.199; no response to any request.
+  documents: []
+- host: https://api.jet2plc.com
+  reachable: false
+  note: Resolves to AWS Global Accelerator anycast addresses; no response.
+  documents: []
+hostnames_nxdomain:
+  note: >-
+    DNS sweep 2026-07-28 for additional API/discovery hostnames beyond those in
+    the round-one record. All returned NXDOMAIN.
+  hosts:
+  - connect.jet2.com
+  - distribution.jet2.com
+  - api2.jet2.com
+  - gateway.jet2.com
+  - services.jet2.com
+  - public-api.jet2.com
+  - openapi.jet2.com
+  - swagger.jet2.com
+  - graphql.jet2.com
+  - api-docs.jet2.com
+  - developer.jet2holidays.com
+  - agents.jet2holidays.com
+  - secure.jet2holidays.com
+  - b2b.jet2holidays.com
+  - trade-api.jet2holidays.com
+  - designsystem.jet2.com
+  - storybook.jet2.com

@@ -1,0 +1,91 @@
+generated: '2026-07-28'
+method: searched
+source: >-
+  https://registry.npmjs.org/-/v1/search?text=scope:jet2 — npm registry search
+  and per-package registry metadata fetched 2026-07-28.
+summary: >-
+  Jet2 publishes exactly two public first-party software packages, both on npm
+  under the @jet2 scope, both owned by the npm maintainer account "jet2", and
+  both pointing at Jet2's own Azure DevOps organisation
+  (jet2tfs.visualstudio.com/Jet2Digital) as their source repository. NEITHER is
+  an API client library. They are front-end design-system artefacts — a
+  design-token build and an early React component library — published to npm so
+  Jet2's own web properties can consume them. Both were published in April 2024
+  and neither has been updated since. No Jet2 SDK exists for any language on
+  npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist or
+  crates.io, because Jet2 publishes no API for an SDK to wrap. No `SDKs`
+  pointer is emitted for this artifact: claiming these as API client libraries
+  would misrepresent what they are.
+registries_probed:
+- registry: npm
+  result: 2 first-party packages found (scope @jet2)
+- registry: pypi
+  result: no first-party package (pypi.org/pypi/jet2/json -> 404)
+- registry: maven-central
+  result: no first-party artifact found
+- registry: nuget
+  result: no first-party package found
+- registry: pkg.go.dev
+  result: no first-party module found
+- registry: rubygems
+  result: no first-party gem found
+- registry: packagist
+  result: no first-party package found
+- registry: crates.io
+  result: no first-party crate found
+packages:
+- language: css
+  registry: npm
+  name: '@jet2/designsystem.tokens'
+  version: 0.0.10
+  url: https://www.npmjs.com/package/@jet2/designsystem.tokens
+  install: npm install @jet2/designsystem.tokens
+  official: true
+  official_evidence: >-
+    npm scope @jet2, npm maintainer account "jet2", repository
+    https://jet2tfs.visualstudio.com/Jet2Digital/_git/DesignSystem.Tokens
+    (Jet2's own Azure DevOps organisation).
+  description: Tokens for the Jet2 Design System
+  keywords: [design-tokens, style-variables]
+  license: ISC
+  first_published: '2024-04-16'
+  last_published: '2024-04-25'
+  versions: 10
+  api_client: false
+  note: >-
+    Ships built CSS custom-property files under build/web/ for seven Jet2 brand
+    themes — city, flights, global, holidays, indulgent, vibe, villas — each
+    with semantic color, radius and shadow layers plus component-level button
+    tokens. This is the clearest public evidence of Jet2's internal brand
+    architecture; it is not an API artifact.
+- language: javascript
+  registry: npm
+  name: '@jet2/designsystem.library'
+  version: 0.0.2
+  url: https://www.npmjs.com/package/@jet2/designsystem.library
+  install: npm install @jet2/designsystem.library
+  official: true
+  official_evidence: >-
+    npm scope @jet2, npm maintainer account "jet2", repository
+    https://jet2tfs.visualstudio.com/Jet2Digital/_git/DesignSystem.Library
+    (Jet2's own Azure DevOps organisation).
+  description: Jet2 Design System Library for Web
+  license: ISC
+  first_published: '2024-04-17'
+  last_published: '2024-04-17'
+  versions: 1
+  dependencies: [react-aria-components]
+  peer_dependencies: [react, react-dom]
+  api_client: false
+  note: >-
+    A single published version. The tarball contains exactly one component —
+    dist/components/buttons/Button — and the shipped README.md is the unmodified
+    "React + TypeScript + Vite" scaffold boilerplate. Recorded as-is: this is an
+    abandoned or very early-stage public release, not a maintained component
+    library.
+excluded:
+- name: '@holidayextras/brand-jet2'
+  url: https://www.npmjs.com/package/@holidayextras/brand-jet2
+  reason: >-
+    Published by Holiday Extras, not Jet2 — a partner's branding package that
+    happens to carry Jet2 assets. Third-party; not counted as a Jet2 package.

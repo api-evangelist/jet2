@@ -1,0 +1,71 @@
+generated: '2026-07-28'
+method: searched
+source: >-
+  npm registry metadata + published tarball contents for @jet2/designsystem.*
+  (fetched 2026-07-28); DNS and HTTP probe of design.jet2.com.
+summary: >-
+  Jet2 operates a real, named first-party design system — the Jet2 Design
+  System — with published npm artefacts and a hosted documentation portal at
+  design.jet2.com. It is the only genuinely public first-party developer
+  surface Jet2 has. It is also gated and dormant: the documentation portal
+  requires a Supernova login, and both npm packages were last published in
+  April 2024. These are internal web-UI components for Jet2's own consumer
+  properties, NOT embeddable components for an API (there is no Jet2 API to
+  embed against), so this artifact records what exists rather than implying a
+  developer-facing component offering.
+documentation:
+  url: https://design.jet2.com/
+  status: gated
+  platform: Supernova
+  evidence: >-
+    design.jet2.com is a CNAME to colossal-opossum-peach.custom.supernova-docs.io
+    (63.35.34.86). A browser-shaped request returns HTTP 302 to
+    https://default.supernova-docs.io/auth/login, which redirects to
+    https://auth.supernova.io/login?...&docs_domain=design.jet2.com — an OAuth
+    authorization-code + PKCE login. Non-browser clients receive HTTP 400
+    {"error":"Not supported on older browsers. Please upgrade to a modern
+    browser."}. No content was read; nothing about the portal's contents is
+    asserted here beyond its existence and its login wall.
+source_control:
+  url: https://jet2tfs.visualstudio.com/Jet2Digital
+  status: gated
+  platform: Azure DevOps
+  evidence: >-
+    Both npm packages declare repositories under
+    jet2tfs.visualstudio.com/Jet2Digital/_git/. Requests to the organisation and
+    repository URLs return HTTP 203 (Azure DevOps anonymous-access rejection) —
+    the repositories are private. This is Jet2's source-control home; there is no
+    public GitHub organisation.
+families:
+- family: Design tokens
+  package: '@jet2/designsystem.tokens'
+  loader: CSS custom properties (build/web/**.css)
+  themes: [city, flights, global, holidays, indulgent, vibe, villas]
+  layers:
+  - semantic/color.css
+  - semantic/radius.css
+  - semantic/shadow.css
+  - components/button.css
+  note: >-
+    Seven brand themes shipped side by side. "flights" and "holidays" map to
+    Jet2.com and Jet2holidays; city, indulgent, vibe and villas correspond to
+    Jet2holidays product lines; "global" is the shared base. Verbatim from the
+    published tarball's directory structure — no interpretation of unpublished
+    intent.
+- family: React component library
+  package: '@jet2/designsystem.library'
+  loader: ESM/CJS bundle (dist/main.js), React 18 peer dependency
+  built_on: react-aria-components
+  components:
+  - name: Button
+    path: dist/components/buttons/Button
+    typed: true
+  note: >-
+    Exactly one component is present in the only published version (0.0.2). The
+    shipped README.md is the unmodified "React + TypeScript + Vite" scaffold
+    boilerplate. Recorded honestly as an early or abandoned public release.
+gaps:
+- No public changelog, versioning policy or release notes for either package.
+- No public Storybook (storybook.jet2.com and designsystem.jet2.com are NXDOMAIN).
+- No contribution guide, licence file beyond the ISC declaration, or issue tracker reachable without a Jet2 Azure DevOps account.
+- Neither package has been republished since April 2024.
