@@ -1,0 +1,104 @@
+aid: jet2
+url: https://raw.githubusercontent.com/api-evangelist/jet2/refs/heads/main/apis.yml
+name: Jet2
+kind: company
+description: >-
+  Jet2 plc (London Stock Exchange: JET2, formerly Dart Group plc) is a British
+  leisure travel group headquartered at Low Fare Finder House, Leeds Bradford
+  Airport, Yeadon, Leeds, West Yorkshire — an address confirmed verbatim in the
+  Extended Validation TLS certificate served by www.jet2.com, issued to "JET2.COM
+  LIMITED", company serial number 02739537, jurisdiction GB. Its home market is
+  the United Kingdom. The group combines two businesses that are unusual in this
+  sector for being deliberately fused: Jet2.com (IATA code LS, ICAO code EXS),
+  the UK's third-largest airline, and Jet2holidays, the UK's largest ATOL holder
+  and leading provider of ATOL-protected package holidays to the Mediterranean,
+  the Canary Islands and European city destinations. For the year ended 31 March
+  2026 the group reported revenue of £7,482.1 million, operating profit of £439.6
+  million and a record 20.83 million passengers, flying from 14 UK airport bases
+  including newly added London Luton and London Gatwick, with more than 63% of
+  flown passengers buying an end-to-end package holiday and 155 Airbus A321neo
+  aircraft on order. Jet2holidays sells through its own website and through more
+  than 2,500 independent UK travel agent partners, and carries ABTA number Y1256.
+  Where Jet2 sits in the distribution chain is the point of this record. Like
+  easyJet and Ryanair, Jet2.com was built with no Global Distribution System
+  dependency at all: it never filed fares into the GDS rail that Amadeus, Sabre
+  and Travelport have intermediated for forty years, and it therefore never
+  needed IATA's New Distribution Capability as a remedy. Travelport supports Jet2
+  in Smartpoint only as a "Direct Payment Carrier" — its low-cost-carrier
+  workaround — point-to-point only, no connecting flights, and with no
+  post-booking change or cancellation possible through the GDS at all
+  ("Requests for changes must be made directly through Jet2"). In June 2025
+  Jet2.com signed a distribution agreement with airline technology company Kyte,
+  whose Kyte Direct Connect (KDC) JSON/REST API "standardises airline NDC and LCC
+  proprietary content", opening Jet2 seats and ancillaries to travel management
+  companies and corporate booking tools for the first time, with the same content
+  reaching agency desktops through AirGateway. Separately, Jet2holidays operates
+  an agency API that lets independent agents sell Jet2 packages on their own
+  bookable websites for commission. Its API posture, stated honestly, is that
+  Jet2 runs real production distribution APIs and publishes nothing about them.
+  There is no developer portal — developer.jet2.com, developers.jet2.com,
+  docs.jet2.com, apis.jet2.com, ndc.jet2.com, partner.jet2.com and
+  trade.jet2.com all fail to resolve — no API reference, no OpenAPI, Swagger,
+  AsyncAPI or GraphQL contract, no security.txt, no .well-known catalogue and no
+  official GitHub organisation. api.jet2.com resolves and answers HTTP 200 with
+  nothing but the stock Microsoft IIS 10.0 default page, 404 on every spec path
+  probed. Access is by commercial agreement only, negotiated bilaterally or
+  through Kyte, whose own FAQ states that "Access to airline products is
+  controlled by each airline." This record is an honest stub: apis[] is
+  intentionally empty because no Jet2 API is publicly documented, and listing an
+  undocumented hostname as an API would be fabrication. The evidence, including
+  every URL probed with its HTTP status, is in review.yml.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+tags:
+- Travel
+- United Kingdom
+- Aviation
+- Airline
+- Low Cost Carrier
+- Package Holidays
+- Tour Operator
+- Distribution
+- Booking
+- Ancillaries
+- Partner Gated
+created: '2026-07-28'
+modified: '2026-07-28'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  name: Jet2.com
+  url: https://www.jet2.com/
+- type: Website
+  name: Jet2holidays
+  url: https://www.jet2holidays.com/
+- type: PartnerPortal
+  name: Jet2holidays trade site for independent travel agents
+  url: https://trade.jet2holidays.com/
+- type: AgencyAgreement
+  name: Jet2holidays Limited standard agency agreement (April 2025)
+  url: https://www.jet2holidays.com/-/media/pdfs/agency%20agreement_april_2025.pdf
+- type: AgencyAgreement
+  name: Jet2holidays Limited standard agency agreement (effective 26 May 2021)
+  url: https://www.jet2holidays.com/-/media/pdfs/new_agencyagreement_jet2holidays.pdf
+- type: ConsumerProtection
+  name: ATOL protection
+  url: https://www.jet2holidays.com/atol
+- type: Documentation
+  name: Carrier information and liability notice
+  url: https://www.jet2.com/en/carrier-information-and-liability-notice
+- type: About
+  name: About us
+  url: https://www.jet2.com/en/about-us
+- type: InvestorRelations
+  name: Jet2 plc corporate and investor site
+  url: https://www.jet2plc.com/
+- type: Wikipedia
+  name: Jet2 plc
+  url: https://en.wikipedia.org/wiki/Jet2_plc
+- type: Wikipedia
+  name: Jet2.com
+  url: https://en.wikipedia.org/wiki/Jet2.com
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
