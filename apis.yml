@@ -75,7 +75,7 @@ tags:
 - Partner Gated
 created: '2026-07-28'
 modified: '2026-07-28'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis: []
 common:
 - type: DomainSecurity
