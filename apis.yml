@@ -60,6 +60,17 @@ description: >-
   SDK in any package registry. Jet2's engineering voice, such as it is, comes
   from Jet2 Travel Technologies (J2TT), its in-house development centre in Pune,
   India, which runs a public blog with an RSS feed.
+deliveryModel:
+  model: library
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Travel
