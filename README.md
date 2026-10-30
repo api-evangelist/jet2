@@ -1,4 +1,4 @@
-# Jet2 (jet2)
+# Jet2
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,91 +64,81 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Jet2 plc (London Stock Exchange: JET2, formerly Dart Group plc) is a British leisure travel group headquartered at Low Fare Finder House, Leeds Bradford Airport, Yeadon, Leeds, West Yorkshire. Its home market is the United Kingdom. The group fuses two businesses that most of the sector keeps apart: Jet2.com (IATA code LS, ICAO code EXS), the UK's third-largest airline, and Jet2holidays, the UK's largest ATOL holder. For the year ended 31 March 2026 it reported revenue of £7,482.1 million, operating profit of £439.6 million and a record 20.83 million passengers across 14 UK airport bases, with more than 63% of flown passengers buying an end-to-end package holiday. Jet2 sits at the direct end of the airline distribution chain: like easyJet and Ryanair it was built with no Global Distribution System dependency and therefore never needed IATA's New Distribution Capability as a remedy. Its API posture, stated honestly, is that Jet2 runs real production distribution APIs and publishes nothing about them — no developer portal, no reference documentation, no machine-readable contract, and no published commercial terms for access.
+Jet2 plc (London Stock Exchange: JET2, formerly Dart Group plc) is a British leisure travel group headquartered at Low Fare Finder House, Leeds Bradford Airport, Yeadon, Leeds, West Yorkshire — an address confirmed verbatim in the Extended Validation TLS certificate served by www.jet2.com, issued to "JET2.COM LIMITED", company serial number 02739537, jurisdiction GB. Its home market is the United Kingdom. The group combines two businesses that are unusual in this sector for being deliberately fused: Jet2.com (IATA code LS, ICAO code EXS), the UK's third-largest airline, and Jet2holidays, the UK's largest ATOL holder and leading provider of ATOL-protected package holidays to the Mediterranean, the Canary Islands and European city destinations. For the year ended 31 March 2026 the group reported revenue of £7,482.1 million, operating profit of £439.6 million and a record 20.83 million passengers, flying from 14 UK airport bases including newly added London Luton and London Gatwick, with more than 63% of flown passengers buying an end-to-end package holiday and 155 Airbus A321neo aircraft on order. Jet2holidays sells through its own website and through more than 2,500 independent UK travel agent partners, and carries ABTA number Y1256. Where Jet2 sits in the distribution chain is the point of this record. Like easyJet and Ryanair, Jet2.com was built with no Global Distribution System dependency at all: it never filed fares into the GDS rail that Amadeus, Sabre and Travelport have intermediated for forty years, and it therefore never needed IATA's New Distribution Capability as a remedy. Travelport supports Jet2 in Smartpoint only as a "Direct Payment Carrier" — its low-cost-carrier workaround — point-to-point only, no connecting flights, and with no post-booking change or cancellation possible through the GDS at all ("Requests for changes must be made directly through Jet2"). In June 2025 Jet2.com signed a distribution agreement with airline technology company Kyte, whose Kyte Direct Connect (KDC) JSON/REST API "standardises airline NDC and LCC proprietary content", opening Jet2 seats and ancillaries to travel management companies and corporate booking tools for the first time, with the same content reaching agency desktops through AirGateway. Separately, Jet2holidays operates an agency API that lets independent agents sell Jet2 packages on their own bookable websites for commission. Its API posture, stated honestly, is that Jet2 runs real production distribution APIs and publishes nothing about them. There is no developer portal — developer.jet2.com, developers.jet2.com, docs.jet2.com, apis.jet2.com, ndc.jet2.com, partner.jet2.com and trade.jet2.com all fail to resolve — no API reference, no OpenAPI, Swagger, AsyncAPI or GraphQL contract, no security.txt, no .well-known catalogue and no official GitHub organisation. api.jet2.com resolves and answers HTTP 200 with nothing but the stock Microsoft IIS 10.0 default page, 404 on every spec path probed. Access is by commercial agreement only, negotiated bilaterally or through Kyte, whose own FAQ states that "Access to airline products is controlled by each airline." This record is an honest stub: apis[] is intentionally empty because no Jet2 API is publicly documented, and listing an undocumented hostname as an API would be fabrication. The evidence, including every URL probed with its HTTP status, is in review.yml. A second enrichment pass on 28 July 2026 found the one genuinely public first-party developer surface Jet2 has, and it is not an API: the Jet2 Design System, published as two npm packages under the @jet2 scope (design tokens for seven brand themes, and a React component library containing a single Button), sourced from Jet2's private Azure DevOps organisation at jet2tfs.visualstudio.com/Jet2Digital and documented at design.jet2.com behind a Supernova login. Both packages were last published in April 2024. The same pass confirmed no /.well-known/ document on any host that answers, no security.txt, no vulnerability disclosure programme, no trust centre, no public Postman collection and no SDK in any package registry. Jet2's engineering voice, such as it is, comes from Jet2 Travel Technologies (J2TT), its in-house development centre in Pune, India, which runs a public blog with an RSS feed.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/jet2/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/jet2/refs/heads/main/apis.yml)
+**Areas:** Travel · United Kingdom · Aviation · Airlines · Low Cost Carrier · Package Holidays · Tour Operator · Distribution · Booking · Ancillaries
 
-## Tags
+## Jet2 on APIs.io
 
-- Travel
-- United Kingdom
-- Aviation
-- Airline
-- Low Cost Carrier
-- Package Holidays
-- Tour Operator
-- Distribution
-- Booking
-- Ancillaries
-- Partner Gated
+Everything profiled for Jet2 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/jet2/](https://apis.io/providers/jet2/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-28
-- **Modified:** 2026-07-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (1)
 
-No Jet2 API is publicly documented, so `apis[]` is intentionally empty.
+Authentication, trust centre, and vulnerability disclosure.
 
-Two Jet2 distribution APIs demonstrably exist in production, and neither is documented by Jet2:
+- [Jet2 Domain Security](https://apis.io/security/jet2/jet2-domain-security/)
 
-1. **The Jet2.com flight distribution API**, reached by travel sellers through Kyte. The June 2025 Jet2.com/Kyte distribution agreement put Jet2 seats and the full ancillary range onto Kyte Direct Connect — which Kyte describes as "a powerful, flexible, JSON/REST API that supports full airline content and functionality from both NDC and LCC airlines" — opening Jet2 to travel management companies and corporate booking tools for the first time, with downstream desktop presentation via AirGateway.
-2. **The Jet2holidays agency API**, which lets independent agencies sell Jet2 packages on their own websites for the agreed commission. Trade press on the trial notes that "agencies that want to use the API to its full potential must already have bookable websites", and that companies can sign up direct with Jet2holidays or through a third-party technology supplier.
+## Where to find this API
 
-Neither has a published base URL, operation, schema, authentication scheme, scope or rate limit. `api.jet2.com` resolves via `api.lb.jet2.com` and answers HTTP 200 with nothing but the stock Microsoft IIS 10.0 default page — 404 on `/swagger`, `/swagger.json`, `/openapi.json`, `/api-docs` and `/.well-known/openapi.json`. `api.jet2holidays.com` resolves and does not answer. `b2b.jet2.com` is a Microsoft ADFS organisational-account login. `developer`, `developers`, `docs`, `apis`, `ndc`, `partner`, `partners`, `trade`, `agent`, `sandbox`, `mcp`, `status`, `trust` and `xml` subdomains of `jet2.com` all fail to resolve. There is no official Jet2 GitHub organisation. Listing any of these as an API would be fabrication.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-Third-party flight-data products marketed as a "Jet2.com API" (AirLabs, Aviationstack, FlightAware AeroAPI) are other companies' APIs that happen to cover LS/EXS flights. They are deliberately excluded.
+- [Website](https://www.jet2.com/)
+- [Blog](https://jet2traveltech.com/blogs)
+- [Privacy policy](https://www.jet2plc.com/privacy)
 
-## Distribution
+## API Evangelist rating
 
-Jet2 is **not** an NDC carrier. It is absent from Duffel's published list of NDC-certified airlines, no IATA NDC certification level or ARM index entry was found, `ndc.jet2.com` does not resolve, and no NDC endpoint, schema or message set exists anywhere. Kyte's own positioning separates "NDC" from "LCC proprietary content" and every piece of evidence places Jet2 on the proprietary side of that line.
+**Kin Score 7.0** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-Travelport's own Smartpoint documentation confirms the shape: **Jet2 is supported only as a "Direct Payment Carrier"**, Travelport's low-cost-carrier bolt-on rather than normal EDIFACT GDS participation. The documented constraints are the finding:
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 10.5 |
 
-| Constraint | Documented behaviour |
-| --- | --- |
-| Carrier code | LS |
-| Connections | Point-to-point only — "connecting flights are not supported" |
-| Passengers per booking | 13 maximum (9 on Travelport+ and Apollo) |
-| Multi-city | 8 destinations maximum |
-| Currencies | GBP, EUR, CHF, CZK, PLN, USD |
-| Payment | Restricted forms of payment, mandatory CVV |
-| Post-booking changes | **None through the GDS** — "Requests for changes must be made directly through Jet2" |
+**Agent readiness 0.0** — human-only
 
-Jet2.com never filed fares into the GDS rail as a normal participant. The GDSes reach it on Jet2's terms, not the other way round — which is why the NDC question, framed as an escape from GDS intermediation, simply does not arise here.
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-## Switching cost
+**Regulatory alignment 8.3** — Telecommunications
 
-- **Interface shape:** `proprietary-undocumented`. No standard is referenced — no NDC, no OpenTravel/OTA, no HTNG, no OpenAPI. Two real APIs exist and Jet2 has never described either in public. Nothing in a Jet2 integration is reusable against another carrier.
-- **Second source:** `few-alternatives`. For Jet2's own inventory there is no second source at all — only Jet2 sells Jet2. For the *route* to it there are three verifiable and unequal options: Kyte (KDC, plus AirGateway downstream), Travelport as a Direct Payment Carrier (which cannot service a booking after creation), and a direct Jet2holidays agency agreement. Duffel publishes no Jet2 support. Jet2 publishes no approved-channel list at all, unlike easyJet's fourteen graded channels.
-- **Exit path:** `no-export-published`. No export, dump, bulk or reporting operation exists, because no API is published. No privacy notice, portability commitment or data-protection contact could be retrieved from either domain — every HTML page on `jet2.com` and `jet2holidays.com` returned HTTP 000 to every automated client tried. UK GDPR Article 20 applies as a matter of law; Jet2 publishes no retrievable statement of how it implements it, and there is nothing whatsoever for an agency wanting its own booking book.
-- **Identifier portability:** IATA airline designator LS, ICAO designator EXS and IATA 3-letter airport codes travel. The Jet2 booking reference does not — Travelport's own documentation concedes the GDS cannot modify or cancel a Jet2 booking it holds. No cross-reference to a GDS record locator or an IATA ticket number is published, and IATA/ARC accreditation is not required to sell Jet2.
-- **Contractual lock-in:** *nothing verifiable.* A published Jet2holidays standard agency agreement exists in two indexed versions (April 2025 and 26 May 2021), and both were blocked by Akamai (HTTP 000, WebFetch timeout). **No clause is quoted anywhere in this repository, because none was read.** There is no Jet2 equivalent of easyJet's Distribution Charter: no public distribution policy, no approved-channel list, no reseller acceptable-use policy. Term, notice, exclusivity, fees, commission, data ownership and amendment rights are all unverifiable.
-- **Access gate:** `commercial-agreement`. No published application route, contact, pricing or eligibility criteria. Kyte's FAQ is explicit that "Access to airline products is controlled by each airline. Kyte provides only technical connectivity through the KDC Network." No sandbox, no trial, no self-serve key, no published rate limits.
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/jet2/](https://apis.io/providers/jet2/).
 
-## Machine accessibility
+## How this profile is made
 
-Both `jet2.com` and `jet2holidays.com` sit behind Akamai bot management that terminates HTTP/2 streams with `INTERNAL_ERROR` and drops HTTP/1.1 requests. Every HTML page on both domains returned HTTP 000 to every client tried. Exactly one static asset came back: `https://www.jet2.com/robots.txt`, HTTP 200 once on 2026-07-28, quoted verbatim in [`review.yml`](review.yml) — it disallows `/api*` and `/docs*` and blocks CCBot outright. Company identity was therefore confirmed from the EV TLS certificate served by `www.jet2.com` (`O=JET2.COM LIMITED`, `serialNumber=02739537`, `street=Low Fare Finder House, Leeds Bradford Airport`, `L=Yeadon`, `ST=West Yorkshire`, `C=GB`) rather than from any page.
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-One hygiene observation, recorded but not exploited: `agent.jet2holidays.com` is a CNAME to `prod-uks-jet2-appservice-website.azurewebsites.net`, which has no A record — a dangling CNAME to a deallocated Azure Web App, a subdomain-takeover exposure pattern. Observed by DNS lookup only.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Jet2: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-## Common Properties
+## Open an issue
 
-- [Jet2.com](https://www.jet2.com/)
-- [Jet2holidays](https://www.jet2holidays.com/)
-- [Jet2holidays trade site for independent travel agents](https://trade.jet2holidays.com/)
-- [Jet2holidays standard agency agreement (April 2025)](https://www.jet2holidays.com/-/media/pdfs/agency%20agreement_april_2025.pdf)
-- [Jet2holidays standard agency agreement (effective 26 May 2021)](https://www.jet2holidays.com/-/media/pdfs/new_agencyagreement_jet2holidays.pdf)
-- [ATOL protection](https://www.jet2holidays.com/atol)
-- [Carrier information and liability notice](https://www.jet2.com/en/carrier-information-and-liability-notice)
-- [About us](https://www.jet2.com/en/about-us)
-- [Jet2 plc corporate and investor site](https://www.jet2plc.com/)
-- [Wikipedia — Jet2 plc](https://en.wikipedia.org/wiki/Jet2_plc)
-- [Wikipedia — Jet2.com](https://en.wikipedia.org/wiki/Jet2.com)
-
-Full evidence, including every URL probed with its HTTP status, the DNS chain for every hostname, and the verbatim `robots.txt`, is in [`review.yml`](review.yml).
-
-## Maintainers
-
-- Kin Lane — kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/jet2/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
